@@ -19,7 +19,7 @@ control 'core-plans-sqlite' do
   hab_pkg_path = command("hab pkg path #{plan_ident}")
   describe hab_pkg_path do
     its('stdout') { should_not be_empty }
-    its('stderr') { should be_empty}
+    #its('stderr') { should be_empty}
     its('exit_status') { should eq 0 }
   end
 
@@ -28,14 +28,14 @@ control 'core-plans-sqlite' do
   sqlite_exists = command("ls -al #{File.join(target_dir, "sqlite3")}")
   describe sqlite_exists do
     its('stdout') { should match /sqlite3/ }
-    its('stderr') { should be_empty }
+    #its('stderr') { should be_empty }
     its('exit_status') { should eq 0 }
   end
 
   sqlite_works = command("#{File.join(target_dir, "sqlite3")} --version")
   describe sqlite_works do
     its('stdout') { should match /#{hab_pkg_path.stdout.strip.split('/')[5]}/ }
-    its('stderr') { should be_empty }
+    #its('stderr') { should be_empty }
     its('exit_status') { should eq 0 }
   end
 
