@@ -1,5 +1,5 @@
 pkg_name=sqlite
-pkg_version=3.35.1
+pkg_version=3.36.0
 pkg_dist_version=3350100
 pkg_origin=core
 pkg_license=('Public Domain')
